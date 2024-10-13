@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投资项目收益计算器</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>投资项目收益计算器</h1>
+    
+    <div id="inputs">
+        <div class="input-group">
+            <label for="totalProfit">每日结算总资金:</label>
+            <input type="number" id="totalProfit" min="0" step="0.01" disabled>
+        </div>
+        
+        <h2>投资者初始本金:</h2>
+        <div id="investorInputs"></div>
+        
+        <div class="button-group">
+            <button onclick="authenticate()" class="btn btn-primary">修改数据</button>
+            <button onclick="calculateProfits()" class="btn btn-success" disabled>计算收益</button>
+        </div>
+    </div>
+
+    <div id="results">
+        <h2>收益表格</h2>
+        <table id="profitTable"></table>
+    </div>
+
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <h2>请输入密码</h2>
+            <input type="password" id="passwordInput">
+            <button onclick="verifyPassword()" class="btn btn-primary">确认</button>
+        </div>
+    </div>
+    <div id="overlay" class="overlay"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
